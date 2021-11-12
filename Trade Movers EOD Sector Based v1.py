@@ -15,7 +15,7 @@ import numpy as np
 import datetime as dt
 import re
 
-os.chdir(r'C:\Users\santana\Documents\Bloomberg Scrapes')
+os.chdir(r'')
 
 CUSIPDB = pd.read_excel('CUSIP Database Sectors.xlsx')
 
@@ -131,6 +131,6 @@ newmail = outlook.CreateItem(olMailItem)
 newmail.To = "hsantana@tolisadvisors.com; spuliafico@tolisadvisors.com; ebanks@tolisadvisors.com; tpangia@tolisadvisors.com; sparker@tolisadvisors.com; jrosato@tolisadvisors.com; bilany@tolisadvisors.com"
 newmail.Subject = "Daily Biggest Movers - With Sector Breakout"
 newmail.HTMLBody = "Hi Team, <br><br>Please see below for today's biggest price movers by absolute price change and absolute percentage change in price. Note that there are now sector based pricing tabs in the attached excel report.<br><br> Top Ten Biggest Movers by Price <br><br>" + top10movers.to_html() + "<br><br> Top Movers by Percent <br><br>" + toppercentmovers.to_html() 
-newmail.Attachments.Add(Source = r'C:\Users\santana\Documents\Bloomberg Scrapes' +'\Biggest Trade Movers (Sectors) - '+dt.datetime.today().strftime('%m-%d-%Y')+'.xlsx')
+newmail.Attachments.Add(Source = r'' +'\Biggest Trade Movers (Sectors) - '+dt.datetime.today().strftime('%m-%d-%Y')+'.xlsx')
 newmail.Send()
 
